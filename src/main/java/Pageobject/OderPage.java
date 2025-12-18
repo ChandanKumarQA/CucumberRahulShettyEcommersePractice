@@ -9,7 +9,8 @@ public class OderPage {
 WebDriver driver;
 	
 	public OderPage(WebDriver driver) {
-		
+		this.driver = driver;
+
 		PageFactory.initElements(driver, this);
 		
 		}
