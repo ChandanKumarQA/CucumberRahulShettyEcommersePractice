@@ -31,6 +31,8 @@ public class Placeorderstep {
 		
 		log.clickloginbutton();
 		
+		 order = new OderPage(driver);
+		
 		
 			
         
