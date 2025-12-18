@@ -3,10 +3,11 @@ package Stepdefinition;
 
 
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 
-import org.testng.Assert;
+
 
 
 import Pageobject.Registationpage;
