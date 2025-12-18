@@ -15,7 +15,8 @@ public class Registationpage {
 WebDriver driver;
 	
 	public Registationpage(WebDriver driver) {
-		
+		this.driver = driver;
+
 		PageFactory.initElements(driver, this);
 		
 		}
@@ -49,8 +50,7 @@ WebDriver driver;
 	@FindBy(id="login")
 	WebElement Registationbutton;
 	
-	@FindBy(xpath="//h1[text()='Account Created Successfully']")
-	WebElement succes;
+	
 	
 	
 	@FindBy(id="userPassword")
@@ -131,19 +131,7 @@ public void selectocupation() {
 	select.selectByVisibleText("Student");
 }
 
-public void validatesucessmessage() {
-	String actualMessage = Suceesmessage.getText();
-	
-	String exceptedMessage = "Account Created Successfully";
-	
-	if(actualMessage.contains(exceptedMessage)) {
-		 Assert.assertTrue(true, "Message matched successfully!");
-	}
-	
-	else
-	{
-	    Assert.fail("Actual message does not contain expected message!");
-	}
-	
+public String getSuccessMessage() {
+    return Suceesmessage.getText();
 }
 }

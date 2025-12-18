@@ -7,8 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
-import Pageobject.LoginPage;
+
 import Pageobject.Registationpage;
 import factory.BaseClass;
 import io.cucumber.java.en.Given;
@@ -26,7 +27,7 @@ public class registerstep {
 	public void the_user_is_on_the_page() {
 		
 		driver = BaseClass.getDriver();   
-//        log = new LoginPage(driver);
+
 		reg=new Registationpage(driver);
 		
 	   reg.clickRegistattion();
@@ -97,11 +98,10 @@ public class registerstep {
 	}
 
 	@Then("the user should see a registration success message")
-	public void the_user_should_see_a_registration_success_message() {
-		reg.validatesucessmessage();
-		
-
-	}
+    public void the_user_should_see_a_registration_success_message() {
+        String actual = reg.getSuccessMessage();
+        Assert.assertEquals(actual, "Account Created Successfully");
+    }
 
 	
 
